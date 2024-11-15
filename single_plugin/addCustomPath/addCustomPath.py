@@ -1,7 +1,7 @@
 name = "addCustomPath"
 classname = "addCustomPath"
 
-from threading import Timer
+import os
 from qtpy.QtWidgets import *
 
 class addCustomPath:
@@ -17,6 +17,8 @@ class addCustomPath:
         self.core.popup(str(args))
         configPath = self.core.configs.getProjectConfigPath(args[1])
         configData = self.core.getConfig("export_paths", configPath=configPath) or {}
-        configData["myLoc"] = "C:/custom/loc"
+        directory_path = QFileDialog.getExistingDirectory(None, "Select Local Folder for export")
+
+        configData["Lc_Cache"] = os.path.normpath(f"{directory_path}\\{args[2]}")
         self.core.popup(configData)
         self.core.setConfig("export_paths", val=configData, configPath=configPath)
