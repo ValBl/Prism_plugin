@@ -1,4 +1,5 @@
 {
-    "plugin": "test"
+    "addCustomPath": "PRISM_PLUGIN/Custom/addCustomPath.py",
+    "addDeadlineOption": "PRISM_PLUGIN/Custom/addDeadlineOption/addDeadlineOption.py"
 
 }

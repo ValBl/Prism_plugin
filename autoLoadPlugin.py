@@ -4,7 +4,8 @@ classname = "autoLoadPlugin"
 import json
 
 import os
-#from qtpy.QtWidgets import *
+from qtpy.QtWidgets import *
+
 
 
 class autoLoadPlugin:
@@ -18,8 +19,9 @@ class autoLoadPlugin:
         
         with open('plugin_list_for_Auto_Load.json') as f:
             plugin = json.load(f)
-        
+
         for pluginName, pluginPath in plugin.items():
+
             self.addplugin(pluginName, pluginPath)
     
     
